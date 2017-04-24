@@ -18,29 +18,28 @@ USE `library`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `booktype`
+-- Table structure for table `collect`
 --
 
-DROP TABLE IF EXISTS `booktype`;
+DROP TABLE IF EXISTS `collect`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `booktype` (
-  `bookTypeID` int(10) unsigned zerofill NOT NULL,
-  `booktypeName` varchar(45) NOT NULL,
-  `booktypeDesc` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`bookTypeID`),
-  UNIQUE KEY `bookTypeID_UNIQUE` (`bookTypeID`)
+CREATE TABLE `collect` (
+  `userid` int(11) NOT NULL,
+  `bookid` varchar(50) NOT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`userid`,`bookid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `booktype`
+-- Dumping data for table `collect`
 --
 
-LOCK TABLES `booktype` WRITE;
-/*!40000 ALTER TABLE `booktype` DISABLE KEYS */;
-INSERT INTO `booktype` VALUES (0000000001,'社会科学',NULL);
-/*!40000 ALTER TABLE `booktype` ENABLE KEYS */;
+LOCK TABLES `collect` WRITE;
+/*!40000 ALTER TABLE `collect` DISABLE KEYS */;
+INSERT INTO `collect` VALUES (123,'D58016','2017-03-22 09:24:47'),(123,'I217.02216','2017-03-22 09:28:30'),(123,'I247.51473','2017-03-22 10:38:55'),(123,'I247.55621','2017-03-22 10:38:55'),(123,'I712.451947','2017-03-22 09:43:15'),(123,'I712.65331','2017-03-22 10:38:55'),(123,'K248.09007','2017-03-22 10:38:55'),(123,'O6007','2017-03-22 10:38:55'),(321,'I712.451947','2017-03-22 09:52:50');
+/*!40000 ALTER TABLE `collect` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

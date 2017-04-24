@@ -18,29 +18,28 @@ USE `library`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `booktype`
+-- Table structure for table `order`
 --
 
-DROP TABLE IF EXISTS `booktype`;
+DROP TABLE IF EXISTS `order`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `booktype` (
-  `bookTypeID` int(10) unsigned zerofill NOT NULL,
-  `booktypeName` varchar(45) NOT NULL,
-  `booktypeDesc` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`bookTypeID`),
-  UNIQUE KEY `bookTypeID_UNIQUE` (`bookTypeID`)
+CREATE TABLE `order` (
+  `readID` int(11) NOT NULL,
+  `bookID` varchar(45) NOT NULL,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`readID`,`bookID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `booktype`
+-- Dumping data for table `order`
 --
 
-LOCK TABLES `booktype` WRITE;
-/*!40000 ALTER TABLE `booktype` DISABLE KEYS */;
-INSERT INTO `booktype` VALUES (0000000001,'社会科学',NULL);
-/*!40000 ALTER TABLE `booktype` ENABLE KEYS */;
+LOCK TABLES `order` WRITE;
+/*!40000 ALTER TABLE `order` DISABLE KEYS */;
+INSERT INTO `order` VALUES (123,'I712.451947','2017-03-28 03:11:39'),(321,'I712.451947','2017-03-28 03:11:50'),(321,'I712.65331','2017-03-28 03:12:04');
+/*!40000 ALTER TABLE `order` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

@@ -18,29 +18,32 @@ USE `library`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `booktype`
+-- Table structure for table `comment`
 --
 
-DROP TABLE IF EXISTS `booktype`;
+DROP TABLE IF EXISTS `comment`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `booktype` (
-  `bookTypeID` int(10) unsigned zerofill NOT NULL,
-  `booktypeName` varchar(45) NOT NULL,
-  `booktypeDesc` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`bookTypeID`),
-  UNIQUE KEY `bookTypeID_UNIQUE` (`bookTypeID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `comment` (
+  `id` int(10) unsigned zerofill NOT NULL AUTO_INCREMENT,
+  `bookid` varchar(45) NOT NULL,
+  `userid` int(11) NOT NULL,
+  `content` varchar(45) NOT NULL,
+  `cryptonym` bit(1) DEFAULT b'1',
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `booktype`
+-- Dumping data for table `comment`
 --
 
-LOCK TABLES `booktype` WRITE;
-/*!40000 ALTER TABLE `booktype` DISABLE KEYS */;
-INSERT INTO `booktype` VALUES (0000000001,'社会科学',NULL);
-/*!40000 ALTER TABLE `booktype` ENABLE KEYS */;
+LOCK TABLES `comment` WRITE;
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+INSERT INTO `comment` VALUES (0000000001,'D58016',123,'帮，好极了！','','2017-03-23 06:10:07'),(0000000003,'I247.51473',321,'心灵鸡汤！','\0','2017-03-23 06:10:07'),(0000000004,'I217.02216',123,'不错的书！','','2017-03-23 06:10:07'),(0000000005,'D58016',321,'一本好书。','','2017-03-28 10:41:41');
+/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

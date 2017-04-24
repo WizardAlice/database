@@ -34,10 +34,12 @@ CREATE TABLE `user` (
   `phone` varchar(50) DEFAULT NULL,
   `birthdate` date NOT NULL,
   `roleID` varchar(50) DEFAULT NULL,
-  `img` varchar(50) NOT NULL DEFAULT '120hsb0ngwmaj',
+  `img` varchar(50) NOT NULL DEFAULT '120hsb0ngwmaj.jpg',
+  `updateTime` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `isDeleted` bit(1) DEFAULT b'0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `userID_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=124 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=322 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -46,7 +48,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (123,'WIzardAlice','123','','软件园','软件园','15153138237','1996-05-24','','120hsb0ngwmaj');
+INSERT INTO `user` VALUES (123,'WIzardAlice','123','','软件园','软件园','15153138237','1996-05-24','0','120hsb0ngwmaj.jpg','2017-04-24 02:31:58','\0'),(222,'Paradiser','321','\0','兴隆山','兴隆山','15953160757','1995-05-13','0','1bp822yor1ek3.jpg','2017-04-24 02:31:58','\0'),(321,'Paradiser','321','','兴隆山','兴隆山','15953160757','1995-05-13','0','1bp822yor1ek3.jpg','2017-04-24 02:31:58','\0');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -59,4 +61,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-03-16 20:33:31
+-- Dump completed on 2017-04-24 20:12:38
